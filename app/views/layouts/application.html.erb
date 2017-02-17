@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scheduling</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+
+  <nav class="navbar navbar-default">
+    <div class="navbar-header">
+
+        <%= link_to(raw("<span class='glyphicon glyphicon-calendar'></span>  Schedul3R"), root_path, class: "navbar-brand")%>
+    </div>
+    <ul class="nav navbar-nav">
+      <li >
+       <%= link_to(raw("<span class='glyphicon glyphicon-th-list'></span>  Events"), user_events_path) %>
+ 		</li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      	<% if user_signed_in? %>
+      	      	    <li>
+      	    <%= link_to(raw("<span class='glyphicon  glyphicon glyphicon-wrench'></span> Edit Profile"), edit_user_registration_path)%>
+      		</li>
+      	      <li>
+      			<%= link_to(raw("<span class='glyphicon glyphicon-log-out'></span> Logout"), destroy_user_session_path, :method => :delete)%>
+      			</li>
+      	<% else %>
+      	    <li>
+      	    <%= link_to(raw("<span class='glyphicon  glyphicon glyphicon-globe'></span> Sigh Up"), new_user_registration_path)%>
+      		</li>
+
+      		<li>
+      		<%= link_to(raw("<span class='glyphicon glyphicon-log-in'></span> Login"), new_user_session_path)%>
+      		</li>
+      	<% end %>
+      <li>
+        <a></a>
+      </li>
+    </ul>
+</nav>
+  <p id="notice"><%= notice %></p>
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
+
+  </body>
+
+</html>
