@@ -1,0 +1,56 @@
+/*
+Inspired by http://dribbble.com/shots/917819-iPad-Calendar-Login?list=shots&sort=views&timeframe=ever&offset=461
+*/
+
+
+ .login_g.glyphicon-calendar{
+  font-size: 180px;
+  width: 100%;
+  margin: 0 auto;
+  left:75px;
+  color: #f96145;
+}
+
+input{
+  width: 100%;
+  padding: 1rem;
+  background-color: #ecf2f4;
+  border: 1px solid #ababab;
+  border-radius: 0.2rem;
+}
+input[type=radio]{
+  width: 10px !important;
+  margin-right: 10px !important;; 
+}
+
+label {
+  margin-top: 10px;
+}
+.login {
+  width:320px;
+  margin: 0 auto;
+  margin-bottom: 10px !important;
+}
+h2.login{
+  width:320px;
+  margin: 3 auto;
+  text-align: center;
+  font-weight: bold;
+  color: #f96145;
+}
+.btn {
+  border-radius: 0.2rem;
+}
+.btn .glyphicon {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 3rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}

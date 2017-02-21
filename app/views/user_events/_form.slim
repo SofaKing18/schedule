@@ -1,0 +1,40 @@
+= form_for(user_event) do |f|
+  - if user_event.errors.any?
+    #error_explanation
+      h2
+        = pluralize(user_event.errors.count, "error")
+          | prohibited this user_event from being saved:
+        ul
+          - user_event.errors.full_messages.each do |message|
+            li= message
+  = f.label :name
+  br
+  = f.text_field :name
+  br
+  div style="width:100%; float:left"
+    div style="width:45%; float:left"
+      = f.label :start_date
+      br
+      = f.text_field :start_date, value: (user_event.start_date.strftime("%d.%m.%Y") if user_event.start_date!=nil), class: 'datetimepicker'
+
+    div style="width:45%; float:right"
+      = f.label :end_date
+      br
+      = f.text_field :end_date, value: (user_event.end_date.strftime("%d.%m.%Y") if user_event.end_date!=nil), class: 'datetimepicker'
+
+  div.dn
+    = f.label "Repeat type"
+    .funkyradio
+      - user_event.repeat_types_array.each.with_index do |rt,i|
+        div class="repeat_type_select funkyradio-info"
+          = f.radio_button :repeat_type, i ,id: "user_event_repeat_type_#{i}", checked: i == user_event.repeat_type
+          = f.label user_event.repeat_types_array[i], for: "user_event_repeat_type_#{i}"
+  div.dn
+    = f.label "Other options"
+    .funkyradio
+      .funkyradio-warning
+        input#user_event_hidden name="user_event[hidden]" type="checkbox" checked=user_event.hidden /
+        label for="user_event_hidden"  Hide Event from other Users
+
+  br
+  = f.submit

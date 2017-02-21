@@ -1,0 +1,6 @@
+p
+  | Hello, #{@user.email}! Dont forget about your event(s) #{@date}:
+- @events.each.with_index do |event, i|
+  hr/
+  = i+1
+  | )   #{event[0]}

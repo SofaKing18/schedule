@@ -12,9 +12,9 @@ require 'rails_helper'
 # end
 RSpec.describe StaticPageHelper, type: :helper do
   it 'should not get current user events (not found)' do
-  	expect(helper.user_events).to eq(nil)
+    expect(helper.user_events).to eq(nil)
   end
   it 'should not get current user events (not found)' do
-  	expect(helper.user_events).to eq(nil)
+    expect(helper.user_events).to eq(nil)
   end
 end

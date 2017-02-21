@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title Scheduling
+    =favicon_link_tag(source='favicon.ico')
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    .container-fluid
+      nav.navbar.navbar-default
+        .navbar-header
+          = link_to(raw("<span class='glyphicon glyphicon-calendar'></span>  Schedul3R"), root_path, class: "navbar-brand")
+        ul.nav.navbar-nav
+          li
+            = link_to(raw("<span class='glyphicon glyphicon-th-list'></span>  Events"), user_events_path)
+        ul.nav.navbar-nav.navbar-right
+          - if user_signed_in?
+            li
+              = link_to(raw("<span class='glyphicon  glyphicon glyphicon-wrench'></span> Edit Profile"), edit_user_registration_path)
+            li
+              = link_to(raw("<span class='glyphicon glyphicon-log-out'></span> Logout"), destroy_user_session_path, :method => :delete)
+          - else
+            li
+              = link_to(raw("<span class='glyphicon  glyphicon glyphicon-globe'></span> Sigh Up"), new_user_registration_path)
+            li
+              = link_to(raw("<span class='glyphicon glyphicon-log-in'></span> Login"), new_user_session_path)
+    p#notice= notice
+    .container-fluid
+      = yield
+    div.whitespace
+    footer.footer
+      .container-fluid
+        span.text-muted
+          | &copy; Dmitry Cat, since 2017
+
+    javascript:
+      append_links(); create_calendars();

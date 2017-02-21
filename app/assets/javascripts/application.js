@@ -14,3 +14,23 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function append_links() {
+$("#events_table").on("click", ".own_events", function() {
+  window.location = $( this ).data('href');
+});
+
+$("#calendar").on("click", ".event_count", function() {
+	window.location = $( this ).data('href');
+});
+};
+
+function create_calendars() {
+  // jQuery.datetimepicker.setLocale('ru');
+  $('.datetimepicker').datetimepicker({
+    format:'d.m.Y',
+    lang: 'ru',
+    timepicker:false,
+    dayOfWeekStart: 1
+  });
+};

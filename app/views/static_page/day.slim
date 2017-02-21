@@ -1,0 +1,15 @@
+table id='events_table' class='table table-bordered text-center'
+  thead class='thead-inverse'
+    tr class='wd_shorts'
+      th
+        | Time
+      th
+        | Event
+
+
+  -event_in_day.each do |event|
+    tr class="#{'own_events' if current_user.id == event[1]}" data-href=user_event_path(event[4])
+      td
+        =event[2][10..15]
+      td
+        =event[0]

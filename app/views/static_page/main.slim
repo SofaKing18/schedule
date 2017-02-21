@@ -1,0 +1,21 @@
+table#calendar.table.table-striped.table-bordered.text-center
+  thead.thead-inverse
+    tr.month_name
+      td.link_to_prev_month
+        a href="#{link_for_month_year(prev_month_year)}"
+          span.glyphicon.glyphicon-chevron-left
+      td colspan="5"
+        b= month_name_and_year
+      td.link_to_next_month
+        a href="#{link_for_month_year(next_month_year)}"
+          span.glyphicon.glyphicon-chevron-right
+    tr.wd_shorts
+      td Monday
+      td Tuesday
+      td Wednesday
+      td Thursday
+      td Friday
+      td.weekend Saturday
+      td.weekend Sunday
+  tbody
+    = draw_calendar

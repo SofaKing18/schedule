@@ -1,0 +1,10 @@
+.login
+  span.glyphicon.login_g.glyphicon-calendar
+  h2 class="login"
+    | Schedul3r
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    = f.email_field :email, autofocus: true, placeholder: "email", class:"login"
+    = f.password_field :password, autocomplete: "off", placeholder: "password", class:"login"
+    br
+    = f.submit "Log in", class: "btn btn-default full-width login"
+  = render "devise/shared/links"

@@ -1,2 +1,3 @@
+# UserEventsHelper
 module UserEventsHelper
 end

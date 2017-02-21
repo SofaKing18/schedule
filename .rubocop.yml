@@ -1,0 +1,13 @@
+AllCops:
+  Excludes:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'spec/**/*'
+    - 'test/**/*'
+    - 'bin/**/*'
+  Run:
+    Enabled: true
+Metrics/LineLength:
+  Max: 500
+Metrics/AbcSize:
+  Max: 40
