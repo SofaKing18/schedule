@@ -1,6 +1,7 @@
 doctype html
 html
   head
+    = ENV['ads'].html_safe
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     title Scheduling
     =favicon_link_tag(source='favicon.ico')
